@@ -1,0 +1,17 @@
+server:
+  port: 7070
+
+spring:
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 3000
+        response-timeout: 10s
+      default-filters:
+        - name: GlobalFilter
+          args:
+            defaultMessage : This Is Chiee GateWay
+            preLogger: true
+            postLogger: true
+      routes:
+        - id: test-service
