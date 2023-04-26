@@ -13,6 +13,10 @@ spring:
           uri: lb://COMMUNITY
           predicates:
             - Path=/community/**
+        - id: member-service
+          uri: lb://ACCOUNT
+          predicates:
+            - Path=/account/**
 
 
 
