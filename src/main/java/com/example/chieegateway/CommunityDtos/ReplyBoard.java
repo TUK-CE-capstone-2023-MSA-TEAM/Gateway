@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReplyBoard {
-
+    public String boardId;
     public String title;
     public String content;
 
