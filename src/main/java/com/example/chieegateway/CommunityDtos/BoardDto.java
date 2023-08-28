@@ -6,7 +6,7 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class SaveBoard {
+public class BoardDto {
     public String title;
 
     public String content;

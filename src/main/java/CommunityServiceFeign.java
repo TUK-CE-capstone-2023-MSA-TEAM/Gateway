@@ -1,7 +1,7 @@
-import com.example.chieegateway.CommunityDtos.ReplyBoard;
-import com.example.chieegateway.CommunityDtos.ReplyComment;
-import com.example.chieegateway.CommunityDtos.SaveBoard;
-import com.example.chieegateway.CommunityDtos.SaveComment;
+import com.example.chieegateway.CommunityDtos.BoardReplyDto;
+import com.example.chieegateway.CommunityDtos.CommentDto;
+import com.example.chieegateway.CommunityDtos.BoardDto;
+import com.example.chieegateway.CommunityDtos.CommentSaveDto;
 import com.example.chieegateway.MatchDtos.CurrentMatchDto;
 import com.example.chieegateway.MatchDtos.GetEstimateDto;
 import com.example.chieegateway.MatchDtos.SaveEstimateDto;
@@ -19,19 +19,19 @@ public interface CommunityServiceFeign {
     public String test();
 
     @PostMapping("/comment/save")
-    public void save(@RequestBody SaveComment saveComment);
+    public void save(@RequestBody CommentSaveDto commentSaveDto);
 
     @PostMapping("/comment/save/{parentId}")
-    public void saveReComment(@PathVariable String parentId, @RequestBody SaveComment saveComment);
+    public void saveReComment(@PathVariable String parentId, @RequestBody CommentSaveDto commentSaveDto);
 
     @GetMapping("/comment/good/{id}")
     public void updateGood(@PathVariable String id);
 
     @GetMapping("/board")
-    public List<ReplyBoard> getAll();
+    public List<BoardReplyDto> getAll();
 
     @PostMapping("/board/save")
-    public void saveBoard(@RequestBody SaveBoard boardDto);
+    public void saveBoard(@RequestBody BoardDto boardDto);
 
     @DeleteMapping("/board/delete/{id}/{userId}")
     public void deleteBoard(@PathVariable String id,@PathVariable String userId);
@@ -40,7 +40,7 @@ public interface CommunityServiceFeign {
     public void fileUpload(@RequestPart MultipartFile file, @PathVariable String userEmail);
 
     @GetMapping("/board/get/comment/{boardId}")
-    public List<ReplyComment> getAllComments(@PathVariable String boardId);
+    public List<CommentDto> getAllComments(@PathVariable String boardId);
 
     @GetMapping("/board/get/image")
     public List<String> getImage();

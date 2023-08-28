@@ -8,12 +8,12 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class SaveComment {
+public class CommentSaveDto {
     public String boardId;
     public String userId;
     public String content;
 
     public long good;
 
-    public List<SaveComment> childList = new ArrayList<>();
+    public List<CommentSaveDto> childList = new ArrayList<>();
 }

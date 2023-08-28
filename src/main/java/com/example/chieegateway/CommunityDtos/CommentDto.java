@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @ToString
-public class ReplyComment {
+public class CommentDto {
 
     private String id;
 
@@ -20,5 +20,5 @@ public class ReplyComment {
 
     private long good;
 
-    private List<ReplyComment> childList = new ArrayList<>();
+    private List<CommentDto> childList = new ArrayList<>();
 }

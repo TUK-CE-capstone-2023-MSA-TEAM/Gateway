@@ -10,7 +10,7 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReplyBoard {
+public class BoardReplyDto {
     public String boardId;
     public String title;
     public String content;
