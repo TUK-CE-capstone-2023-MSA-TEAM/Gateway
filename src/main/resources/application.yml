@@ -10,7 +10,7 @@ spring:
         response-timeout: 10s
       routes:
         - id: community-service
-          uri: lb://COMMUNITY
+          uri: http://54.180.159.115:7070/
           predicates:
             - Path=/community/**
         - id: member-service
@@ -24,4 +24,4 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://54.180.159.115:8080/eureka/
