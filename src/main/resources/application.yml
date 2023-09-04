@@ -14,11 +14,11 @@ spring:
           predicates:
             - Path=/community/**
         - id: member-service
-          uri: lb://13.124.140.178:7070
+          uri: http://13.124.140.178:7070
           predicates:
             - Path=/account/**
         - id: streaming-service
-          uri: lb://13.124.140.178:8080
+          uri: http://13.124.140.178:8080
           predicates:
             - Path=/streaming/**
 eureka:
